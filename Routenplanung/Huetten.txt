@@ -1,0 +1,5 @@
+Huette 1#2#11#Ausstieg A
+Huette 2#1#5#
+Huette 3#2#11#Ausstieg B
+Huette 4#2#5#Ausstieg C
+Huette 5#2#0#Ausstieg D
