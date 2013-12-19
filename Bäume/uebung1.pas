@@ -10,7 +10,7 @@ type
 	End;
 
 var
-	root:link; i:Integer;
+	root:link; i:Integer; test:String;
 
 (* Ein Element in den Baum einfügen. *)
 procedure insertNode(var n:link; nachname:String; vorname:String);
@@ -59,13 +59,40 @@ procedure insertUsersInput();
 		readln(vorname);
 		insertNode(root, nachname, vorname)
 	End;
+	
+function searchName(var name:String; lnk:link):String;
+	Begin
+		IF name = lnk^.key_nachname Then
+			Begin
+				searchName:=name + ' ist enthalten.';
+			End
+		ELSE IF name < lnk^.key_nachname Then
+			Begin
+				IF NOT (lnk^.left = NIL) Then
+					searchName(name, lnk^.left)
+				ELSE
+					searchName:=name + ' ist nicht enthalten.'
+			End
+		ELSE IF name > lnk^.key_nachname Then
+			Begin
+				IF NOT (lnk^.right = NIL) Then
+					searchName(name, lnk^.right)
+				ELSE
+					searchName:=name + ' ist nicht enthalten.'			
+			End;
+	End;
 
 (* Mainprogram *)	
-Begin
+Begin	
 	(* 10 Nutzereingaben für den Baum *)
 	FOR i:=0 TO 10 DO
 		insertUsersInput();
 		
 	(* Baum ausgeben *)
 	printTree(root, 'root');
+	
+	(* Einen Namen suchen. *)
+	test:='Haller';
+	insertNode(root, 'Heller', 'Hans');
+	writeln(searchName(test, root));
 End.
