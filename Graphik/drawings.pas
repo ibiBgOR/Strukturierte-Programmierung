@@ -8,7 +8,7 @@ procedure drawNikolaus();
 procedure Luftballons(x,y:integer;Color1,Color2,Color3:integer);
 procedure MyEllipse(x,y:integer);
 procedure Spirale(x,y:Integer);
-// procedure Huette(x,y:Integer);
+procedure Huette(x,y,height,width:Integer);
 
 implementation
 
@@ -96,16 +96,17 @@ Begin
   end;
 end;
 
-{procedure Huette(x,y,height,width:Integer);
+procedure Huette(x,y,height,width:Integer);
 Var widthhalf:integer;
 Begin
-	SetColor(Yellow);
-	Rectangle(x,y+10,height+x,width+x);
+	SetColor(Blue);
+	Rectangle(x,y+10,x+height,y+width);
+        SetColor(Red);
 	{ Hier kommt noch die Implementation für das Dach.}
-        widthhalf:=(int)width/2;
+        widthhalf:=round(width/2);
 	Line(x+widthhalf,y,x,y+10);
 	Line(x+widthhalf,y,x+width,y+10);
 End;
-}
+
 end.
 

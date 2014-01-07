@@ -24,7 +24,7 @@ Begin
   MyEllipse(600,55);
   //Spirale(500,300);
 
-  //Huette(100,100,50,50);
+  Huette(200,300,50,50);
 
   { Schließen des Fensters bei Tastendruck }
   repeat until KeyPressed;
