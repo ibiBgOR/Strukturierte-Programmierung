@@ -1,11 +1,8 @@
 program routenplanung;
-uses unitLogin,unitRouten;
-var eing:integer;
+
+uses unitLogin,unitRouten,unitVerwaltung,unitUI,forms;
 
 (* Die Hauptfunktion *)
 Begin
-	//login();
-	writeln('Wie viele Tage haben Sie Zeit?');
-	readln(eing);
-	findWay(eing);
+    initUI(1);
 End.

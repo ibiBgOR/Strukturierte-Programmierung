@@ -2,9 +2,11 @@ unit unitRouten;
 
 interface
 procedure findWay(var zeit:integer);
-procedure getDistance(); 
+function getDistance():Integer;
 
 implementation
+
+(* Findet den besten Weg bei einer gegebenen Zeit. *)
 procedure findWay(var zeit:integer);
 	type Huette = Record
 		name: String;
@@ -37,11 +39,11 @@ procedure findWay(var zeit:integer);
 					end
 				(* Bei mehr als 6 Tagen sind zu viele Tage möglich *)
 				else if(zeit >= 6) then
-					begin
+					Begin
 						iTemp:=5;
 						findWay(iTemp);
 						writeln('Ebenfalls haben Sie Zeit, sich laenger in bestimmten Huetten aufzuhalten.');
-					end
+					End
 				(* Bei weniger als 6 und mehr als 2 Tagen. *)
 				else
 					Begin
@@ -64,7 +66,9 @@ procedure findWay(var zeit:integer);
 					End;
 			End;
 	End;
-procedure getDistance();
+	
+(* TODO: Abstand zwischen zwei Hütten. *)
+function getDistance():Integer;
 	Begin
 		
 	End;

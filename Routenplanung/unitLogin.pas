@@ -4,6 +4,7 @@ interface
 function login() : Boolean;
 
 implementation
+
 (* Die Funktion zum Einloggen *)
 function login() : Boolean;
 	var logInvar:Boolean; userinDB:Boolean; sEingPsw:String; i:Integer;sEingName:String;
@@ -11,43 +12,42 @@ function login() : Boolean;
 	Begin
 		logInvar := false;
 		userinDB := false;
-		repeat
-			begin
-				repeat 
-					begin
+		Repeat
+			Begin
+				Repeat 
+					Begin
 						writeln ('Geben Sie Ihren Nutzernamen ein.');
 						readln(sEingName);
 						if (sEingName <> sEingNameame) then
-							begin
+							Begin
 								writeln ('User nicht in der Datenbank vorhanden');
-							end
+							End
 						else
 							userinDB := true;
-					end;
-				until userinDB = true;
-				begin
+					End;
+				Until userinDB = true;
+				Begin
 					for i:=0 to 3 do
-						begin
+						Begin
 							writeln('Geben Sie das Passwort ein.');
 							readln(sEingPsw);
 							if (sEingPsw = sPasswort) then
-								begin
+								Begin
 									logInvar := true;
 									break;
-								end
+								End
 							else
 								writeln('Das eingegebene Passwort ist falsch.');
-						end;
-				end;
+						End;
+				End;
 				break;
-			end
-		until (logInvar = true);
+			End
+		Until (logInvar = true);
 		if(loginvar = true) then
-			begin
+			Begin
 				writeln('Sie sind eingeloggt.');
-			end
+			End
 		else
 			writeln('Sie sind nicht eingeloggt.');
-	end;
-	
+	End;
 End.
