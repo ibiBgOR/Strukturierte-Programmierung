@@ -1,0 +1,14 @@
+	{ Generiert einen zufälligen String (bestehend aus 0-10 und A-Z und a-z) }
+	function generateRandString(randLength:Integer): String;
+		var temp : integer;return:String;
+		Begin
+			return:='';
+			Randomize;
+			repeat
+				temp := Random(126);
+				if temp in [40..126{0-1}{A-Z}{a-z}{sonderzeichen}] then
+					return := return + Chr(temp);
+				sleep(5);
+			until length(return) = randLength;
+			exit(return);
+		End;
